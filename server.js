@@ -36,7 +36,7 @@ const client = new MongoClient(process.env.MONGODB_ATLAS_URI, {
   tlsAllowInvalidCertificates: false,
   useNewUrlParser: true,
   useUnifiedTopology: true,
-  serverSelectionTimeoutMS: 5000,
+  serverApi: { version: "1" },
 });
 
 await client.connect();
