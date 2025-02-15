@@ -61,13 +61,12 @@ Answer the user's query **strictly based on the given context** from South Afric
   "_I'm sorry, but I don't have that information. Please check the official South Africa Home Affairs website._"
 - **Format your response in Markdown** for readability.
 - **Be concise, structured, and professional** in your tone.
+-NEVER START YOUR ANSWER WITH " BASED ON THE PROVIDED CONTEXT" THE USER SHOULD NEVER KNOW THAT YOU WERE PROVIDED CONTEXT TO ANSWER HIM/HER
 
 ---
 
-### **User Query:**
 {question}
 
-### **Consultant Response (Based on Context):**
 {context}
 
 ---
@@ -112,7 +111,7 @@ app.post("/api/query", async (req, res) => {
 });
 
 // Start Server
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
   console.log(`Server running on port ${PORT}`);
 });
