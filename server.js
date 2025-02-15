@@ -31,7 +31,14 @@ const embeddings = new GoogleGenerativeAIEmbeddings({
 });
 
 // Connect to MongoDB
-const client = new MongoClient(process.env.MONGODB_ATLAS_URI || "");
+const client = new MongoClient(process.env.MONGODB_ATLAS_URI, {
+  tls: true,
+  tlsAllowInvalidCertificates: false,
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+  serverSelectionTimeoutMS: 5000,
+});
+
 await client.connect();
 console.log("Connected to MongoDB Atlas");
 
